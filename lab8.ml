@@ -141,7 +141,7 @@ listening for the event.
 ......................................................................*)
             
   let fire_event (evt : 'a event) (arg : 'a) : unit =
-    failwith "WEvent.fire_event not implemented"
+    List.fold_left (fun acc x -> x.action arg) () !evt ;;
 
 end
   
